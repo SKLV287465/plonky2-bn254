@@ -15,7 +15,6 @@ use plonky2::gates::poseidon_mds::PoseidonMdsGate;
 use plonky2::gates::public_input::PublicInputGate;
 use plonky2::gates::random_access::RandomAccessGate;
 use plonky2::gates::reducing::ReducingGate;
-use plonky2::gates::reducing_extension::ReducingExtensionGate;
 use plonky2::get_gate_tag_impl;
 use plonky2::read_gate_impl;
 use plonky2::{
@@ -34,7 +33,8 @@ use plonky2::{
         lookup::LookupGenerator, lookup_table::LookupTableGenerator,
         multiplication_extension::MulExtensionGenerator, poseidon::PoseidonGenerator,
         poseidon_mds::PoseidonMdsGenerator, random_access::RandomAccessGenerator,
-        reducing::ReducingGenerator,
+        reducing::ReducingGenerator, reducing_extension::ReducingExtensionGate,
+        reducing_extension::ReducingGenerator as ReducingExtensionGenerator,
     },
     hash::hash_types::RichField,
     impl_gate_serializer, impl_generator_serializer,
@@ -123,6 +123,7 @@ where
         RandomAccessGenerator<F, D>,
         RandomValueGenerator,
         ReducingGenerator<D>,
+        ReducingExtensionGenerator<D>,
         MulExtensionGenerator<F,D>,
         SplitGenerator,
         WireSplitGenerator,

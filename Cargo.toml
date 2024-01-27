@@ -28,7 +28,8 @@ log = "0.4.20"
 [patch.crates-io]
 plonky2 = { git = "https://github.com/nikkolasg/plonky2" }
 
-# plonky2_ecdsa = { path = "../plonky2-ecdsa" }
+##[patch."https://github.com/nikkolasg/plonky2-ecdsa"]
+##plonky2_ecdsa = { path = "../plonky2-ecdsa" }
 
 [dev-dependencies]
 env_logger = "0.11.0"

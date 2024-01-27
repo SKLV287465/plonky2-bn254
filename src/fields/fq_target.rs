@@ -31,7 +31,7 @@ use super::native::get_naf;
 
 #[derive(Clone, Debug)]
 pub struct FqTarget<F: RichField + Extendable<D>, const D: usize> {
-    pub(crate) target: NonNativeTarget<Bn254Base>,
+    pub target: NonNativeTarget<Bn254Base>,
     _marker: PhantomData<F>,
 }
 

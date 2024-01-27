@@ -268,7 +268,8 @@ mod tests {
         let b = G1Affine::rand(rng);
         let c_expected: G1Affine = (a + b).into();
 
-        let config = CircuitConfig::standard_ecc_config();
+        //let config = CircuitConfig::standard_ecc_config();
+        let config = CircuitConfig::standard_recursion_config();
         let mut builder = CircuitBuilder::<F, D>::new(config);
         let a_t = G1Target::constant(&mut builder, a);
         let b_t = G1Target::constant(&mut builder, b);
